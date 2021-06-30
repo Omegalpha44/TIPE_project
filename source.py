@@ -1,3 +1,5 @@
+#Source program, used for the main aspect.
+
 #Etape 1 : Définition des poids que l'on va utiliser pour résoudre le problème
 import random as rand
 import numpy as np
