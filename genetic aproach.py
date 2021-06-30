@@ -1,12 +1,11 @@
 #main program
 
-import pygad
-import numpy
-from tensorflow.python.ops.gen_array_ops import where
-from source import principal as pr
-from source import psychologie as ps
-from icecream import ic
-import matplotlib.pyplot as plt
+import pygad # le module permettant la programmation génétique
+import numpy # calcul des matrices et tenseurs
+from source import principal as pr # le programme que l'on veut obtimiser avec le ML
+from source import psychologie as ps # une autre partie de ce programme, se basant sur l'aspect psychologique
+from icecream import ic # pour afficher les valeurs, debugging
+import matplotlib.pyplot as plt # afficher la courbe de la fitness le long de l'entraînement
 
 def gen1():
     '''Etude ml des résultats de l'étude faite dans le Rhône entre 1998 et 2008'''
@@ -102,7 +101,8 @@ def gen1():
     #recherche de la fit la plus élevé sur l'intégralité du parcours et non pas uniquement sur la dernière époque
 
 
-    def mx():
+    def mx(): 
+        '''Récupération des 5 valeurs ayant obtenues la plus haute fitness dans l'ensemble des générations'''
         max = [0,[]]
         c = 0
         for elem in asso:

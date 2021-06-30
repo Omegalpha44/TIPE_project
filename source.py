@@ -80,6 +80,7 @@ class principal(object):
                     result[2]+=1
         return result
     def mass_simulation_moyennée(n):
+        '''version moyennée 10 fois de mass_simulation, permettant d'avoir des résultats plus précis'''
         res = []
         sum = [0,0,0,0,0]
         for i in range(10):
