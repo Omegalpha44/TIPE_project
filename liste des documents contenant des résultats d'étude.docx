@@ -1,2 +1,19 @@
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7025438/#CD001855-bbs2-0001
-http://www.revarrhone.org/wp-content/uploads/2014/08/Ectes2013-ARVAC-Presentation-1-E-AMOROS.pdf
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7025438/#CD001855-bbs2-0001 # lien vers les études provenant d'état ou d'organisation
+http://www.revarrhone.org/wp-content/uploads/2014/08/Ectes2013-ARVAC-Presentation-1-E-AMOROS.pdf # l'étude française. Actuellement en possession de la version finalisée de l'étude
+https://www.statistiques.developpement-durable.gouv.fr/donnees-sur-le-parc-des-vehicules-au-1er-janvier-2019 #le nombre de véhicule par zone en france
+https://www.insee.fr/fr/recherche?q=v%C3%A9hicule+par+r%C3%A9gion&debut=0 # pour obtenir des statistiques sûres
+https://www.tensorflow.org/tutorials/customization/custom_training_walkthrough # tutoriel pour faire une base de donnée customisée
+
+3,6,accidenté,portait un casque,tête,nuque,visage
+
+classification :
+début d'étude	fin d'étude	véhicule	pays	loi	population	accidenté	portait un casque	tête	nuque	visage
+
+études utilisées : 
+#le rhône
+#thomson 1994
+#singapor 2005
+
+0 -> fr
+1 -> us
+2 -> si
