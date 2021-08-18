@@ -3,6 +3,8 @@ from numpy.lib.nanfunctions import nancumsum
 import tensorflow as tf
 from icecream import ic
 import numpy
+from tensorflow.keras.layers.experimental import preprocessing
+from tensorflow.python.framework.type_spec import lookup
 from tensorflow.python.keras import activations
 from tensorflow.python.keras.engine import input_layer
 import pandas
@@ -11,31 +13,61 @@ import pandas
 #ensuite, on le fait passer dans la suite de neurone (10 neurones pour l'instant)
 #enfin, on demande le trie pour savoir cb de
 
-model = tf.keras.Sequential(
-    [
-    tf.keras.layers.Dense(100), # 5 en entrée, dans notre tenseur. Cf .csv pour se référer aux différentes caractéristiques
-    tf.keras.layers.Dense(60,activation='relu'), # la couche du milieu
-    tf.keras.layers.Dense(30,activation="relu"),
-    tf.keras.layers.Dense(5,activation="relu")
-    ])
-column_names = ["début d'étude" , "fin d'étude" , "nombre de véhicule" , "pays" , "loi" , "population" , "accidenté" , "portait un casque" , "tête" , "nuque" , "visage"]
-
+#le dataset
+column_names = ["début d'étude" , "fin d'étude" , "nombre de véhicule" , "pays" , "loi" , "population" , "accidenté"]
 data_train = pandas.read_csv("valeur.csv",names = column_names)
 data_features = data_train.copy()
-label_names = column_names[6:]
-data_labels = pandas.read_csv("label.csv",names = label_names)
-ic( data_features)
-ic( data_labels)
-data_features = numpy.array(data_features)
-data_labels = numpy.array(data_labels)
+data_labels = data_features.pop("accidenté")
 
-data_features = numpy.asarray(data_features).astype(numpy.float32)
+#traitage des informations non numérique : 
+inputs = {}
+for name,column in data_features.items():
+    dtype = column.dtype
+    if dtype == object :
+        dtype = tf.string
+    else :
+        dtype = tf.float32
 
-data_labels = numpy.asarray(data_labels).astype(numpy.float32)
+    inputs[name] = tf.keras.Input(shape=(1,),name=name,dtype=dtype)
 
+numeric_inputs = {name:input for name,input in inputs.items()
+                  if input.dtype == tf.float32}
+x = tf.keras.layers.Concatenate()(list(numeric_inputs.values()))
+norm = tf.keras.layers.experimental.preprocessing.Normalization()
+norm.adapt(numpy.array(data_train[numeric_inputs.keys()]))
+all_numeric_inputs = norm(x)
+ic(all_numeric_inputs)
 
+preprocessed_inputs = [all_numeric_inputs]
 
-model.compile(loss=tf.losses.MeanSquaredError(),
+for name, input in inputs.items():
+    if input.dtype == tf.float32:
+        continue
+    lookup = preprocessing.StringLookup(vocabulary=numpy.unique(data_features[name]))
+    one_hot = preprocessing.CategoryEncoding(max_tokens=lookup.vocab_size())
+    x = lookup(input)
+    x = one_hot(x)
+    preprocessed_inputs.append(x)
+    
+preprocessed_inputs_cat = tf.keras.layers.Concatenate()(preprocessed_inputs)
+data_preprocessing = tf.keras.Model(inputs,preprocessed_inputs_cat)
+#tf.keras.utils.plot_model(model = data_preprocessing, rankdir='LR', dpi=72, show_shapes=True)
+
+data_features_dict = {name:numpy.array(value)
+                      for name,value in data_features.items()}
+
+#on définie le modèle
+
+def data_model(preprocessing_head, inputs):
+    body = tf.keras.Sequential([
+        tf.keras.layers.Dense(64),
+        tf.keras.layers.Dense(1)
+        ])
+    preprocessed_inputs = preprocessing_head(inputs)
+    result = body(preprocessed_inputs)
+    model = tf.keras.Model(inputs,result)
+    model.compile(loss=tf.losses.MeanSquaredError(),
                 optimizer=tf.optimizers.Adam())
-
-model.fit(data_features,data_labels,epochs=1000)
+    return model
+model = data_model( data_preprocessing, inputs)
+model.fit(x = data_features_dict,y=  data_labels, epochs = 10000)
