@@ -34,7 +34,7 @@ numeric_inputs = {name:input for name,input in inputs.items()
                   if input.dtype == tf.float32}
 x = tf.keras.layers.Concatenate()(list(numeric_inputs.values()))
 norm = tf.keras.layers.experimental.preprocessing.Normalization()
-norm.adapt(numpy.array(data_train[numeric_inputs.keys()]))
+norm.adapt(numpy.array(data_train[numeric_inputs.keys()])) # erreur provenant uniquement de intellisense : le programme tourne très bien malgré l'avertissement.
 all_numeric_inputs = norm(x)
 ic(all_numeric_inputs)
 
@@ -70,4 +70,8 @@ def data_model(preprocessing_head, inputs):
                 optimizer=tf.optimizers.Adam())
     return model
 model = data_model( data_preprocessing, inputs)
-model.fit(x = data_features_dict,y=  data_labels, epochs = 10000)
+model.fit(x = data_features_dict,y=  data_labels, batch_size=256, epochs = 20000)
+
+
+
+
