@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\informations",
+    "\\programme",
+    "\\tests",
+    "\\__pycache__"
   ],
-  "SelectedNode": "\\deepl.py",
+  "SelectedNode": "\\programme\\deepl3.py",
   "PreviewInSolutionExplorer": false
 }

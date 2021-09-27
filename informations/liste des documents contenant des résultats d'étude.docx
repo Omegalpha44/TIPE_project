@@ -1,0 +1,38 @@
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7025438/#CD001855-bbs2-0001 # lien vers les études provenant d'état ou d'organisation
+http://www.revarrhone.org/wp-content/uploads/2014/08/Ectes2013-ARVAC-Presentation-1-E-AMOROS.pdf # l'étude française. Actuellement en possession de la version finalisée de l'étude
+https://www.statistiques.developpement-durable.gouv.fr/donnees-sur-le-parc-des-vehicules-au-1er-janvier-2019 #le nombre de véhicule par zone en france
+https://www.insee.fr/fr/recherche?q=v%C3%A9hicule+par+r%C3%A9gion&debut=0 # pour obtenir des statistiques sûres
+https://www.tensorflow.org/tutorials/customization/custom_training_walkthrough # tutoriel pour faire une base de donnée customisée
+https://www.aihw.gov.au/reports/injury/pedal-cyclist-injury-deaths-hospitalisations/contents/summary
+https://en.wikipedia.org/wiki/Bicycle_helmets_in_New_Zealand
+https://en.wikipedia.org/wiki/Bicycle_helmets_in_the_United_States
+https://academic.oup.com/ije/article/46/1/278/2617198
+
+3,6,accidenté,portait un casque,tête,nuque,visage
+
+classification :
+début d'étude	fin d'étude	véhicule	pays	loi	population	accidenté	portait un casque	tête	nuque	visage
+
+études utilisées : 
+#le rhône
+#thomson 1994
+#singapor 2005
+
+0 -> fr
+1 -> us
+2 -> si
+
+note du 18/08/21 : je vais essayer de réduire les labels à déterminer à seulement le nombre d'accidenté cycliste, puisque c'est ce qui nous intéresse tout particulièrement. De ce fait,
+je pense qu'entraîner un réseau entier par valeur recherché est peut_être la bonne solution.
+
+en sauvegarde, voici les valeurs et les labels utilisées avant changement : 
+features:
+1998.0,2021.0,50000.0,0.0,0.0,1600000.0
+1992.0,1994.0,465264.0,1.0,0.0,730400.0
+2004.0,2005.0,600000.0,2.0,0.0,5704000.0
+labels:
+8373.0,1720.0,1471.0,529.0,1926.0
+3390.0,983.0,1.0,222.0,0.0
+160.0,17.0,58.0,0.0,54.0
+author,year,injury.type,size,t.inj,c.inj,t.ninj,c.ninj,location,setting,data.collection,mandatory,mandatory.category,ages,male,crash.mv,co.head,co.face,co.neck
+

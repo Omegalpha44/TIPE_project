@@ -1,0 +1,37 @@
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7025438/#CD001855-bbs2-0001 # lien vers les �tudes provenant d'�tat ou d'organisation
+http://www.revarrhone.org/wp-content/uploads/2014/08/Ectes2013-ARVAC-Presentation-1-E-AMOROS.pdf # l'�tude fran�aise. Actuellement en possession de la version finalis�e de l'�tude
+https://www.statistiques.developpement-durable.gouv.fr/donnees-sur-le-parc-des-vehicules-au-1er-janvier-2019 #le nombre de v�hicule par zone en france
+https://www.insee.fr/fr/recherche?q=v%C3%A9hicule+par+r%C3%A9gion&debut=0 # pour obtenir des statistiques s�res
+https://www.tensorflow.org/tutorials/customization/custom_training_walkthrough # tutoriel pour faire une base de donn�e customis�e
+https://www.aihw.gov.au/reports/injury/pedal-cyclist-injury-deaths-hospitalisations/contents/summary
+https://en.wikipedia.org/wiki/Bicycle_helmets_in_New_Zealand
+https://en.wikipedia.org/wiki/Bicycle_helmets_in_the_United_States
+https://docs.microsoft.com/fr-fr/learn/modules/train-evaluate-deep-learn-models/1-introduction
+
+
+3,6,accident�,portait un casque,t�te,nuque,visage
+
+classification :
+d�but d'�tude	fin d'�tude	v�hicule	pays	loi	population	accident�	portait un casque	t�te	nuque	visage
+
+�tudes utilis�es : 
+#le rh�ne
+#thomson 1994
+#singapor 2005
+
+0 -> fr
+1 -> us
+2 -> si
+
+note du 18/08/21 : je vais essayer de r�duire les labels � d�terminer � seulement le nombre d'accident� cycliste, puisque c'est ce qui nous int�resse tout particuli�rement. De ce fait,
+je pense qu'entra�ner un r�seau entier par valeur recherch� est peut_�tre la bonne solution.
+
+en sauvegarde, voici les valeurs et les labels utilis�es avant changement : 
+features:
+1998.0,2021.0,50000.0,0.0,0.0,1600000.0
+1992.0,1994.0,465264.0,1.0,0.0,730400.0
+2004.0,2005.0,600000.0,2.0,0.0,5704000.0
+labels:
+8373.0,1720.0,1471.0,529.0,1926.0
+3390.0,983.0,1.0,222.0,0.0
+160.0,17.0,58.0,0.0,54.0
