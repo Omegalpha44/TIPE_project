@@ -45,7 +45,7 @@ def gen1():
 
     # paramètre de l'algorithme génétique
 
-    num_generations = 50
+    num_generations = 5
 
     num_parents_mating = 4
 

@@ -4,10 +4,12 @@ import tensorflow as tf
 from icecream import ic
 import numpy
 from tensorflow.keras.layers.experimental import preprocessing
+from tensorflow.python.framework.tensor_spec import TensorSpec
 from tensorflow.python.framework.type_spec import lookup
 from tensorflow.python.keras import activations
 from tensorflow.python.keras.engine import input_layer
 import pandas
+import tensorboard
 
 # Présentation du modèle : on prend en entrée un vecteur à 5 dimensions, chacune représentant une information nécessaire pour résoudre le problème
 #ensuite, on le fait passer dans la suite de neurone (10 neurones pour l'instant)
@@ -51,7 +53,7 @@ for name, input in inputs.items():
     
 preprocessed_inputs_cat = tf.keras.layers.Concatenate()(preprocessed_inputs)
 data_preprocessing = tf.keras.Model(inputs,preprocessed_inputs_cat)
-#tf.keras.utils.plot_model(model = data_preprocessing, rankdir='LR', dpi=72, show_shapes=True)
+tf.keras.utils.plot_model(model = data_preprocessing, rankdir='LR', dpi=72, show_shapes=True)
 
 data_features_dict = {name:numpy.array(value)
                       for name,value in data_features.items()}
@@ -70,8 +72,17 @@ def data_model(preprocessing_head, inputs):
                 optimizer=tf.optimizers.Adam())
     return model
 model = data_model( data_preprocessing, inputs)
-model.fit(x = data_features_dict,y=  data_labels, batch_size=256, epochs = 20000)
+model.fit(x = data_features_dict,y=  data_labels, batch_size=256, epochs = 100)
 
-#hey
+results = model.evaluate(x = data_features_dict,y=  data_labels, batch_size=256)
+
+print("test loss, test acc",results )
+
+print(tf.TensorSpec(data_features_dict))
+
+
+
+
+
 
 

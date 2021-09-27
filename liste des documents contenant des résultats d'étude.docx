@@ -1,19 +1,21 @@
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7025438/#CD001855-bbs2-0001 # lien vers les études provenant d'état ou d'organisation
-http://www.revarrhone.org/wp-content/uploads/2014/08/Ectes2013-ARVAC-Presentation-1-E-AMOROS.pdf # l'étude française. Actuellement en possession de la version finalisée de l'étude
-https://www.statistiques.developpement-durable.gouv.fr/donnees-sur-le-parc-des-vehicules-au-1er-janvier-2019 #le nombre de véhicule par zone en france
-https://www.insee.fr/fr/recherche?q=v%C3%A9hicule+par+r%C3%A9gion&debut=0 # pour obtenir des statistiques sûres
-https://www.tensorflow.org/tutorials/customization/custom_training_walkthrough # tutoriel pour faire une base de donnée customisée
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7025438/#CD001855-bbs2-0001 # lien vers les ï¿½tudes provenant d'ï¿½tat ou d'organisation
+http://www.revarrhone.org/wp-content/uploads/2014/08/Ectes2013-ARVAC-Presentation-1-E-AMOROS.pdf # l'ï¿½tude franï¿½aise. Actuellement en possession de la version finalisï¿½e de l'ï¿½tude
+https://www.statistiques.developpement-durable.gouv.fr/donnees-sur-le-parc-des-vehicules-au-1er-janvier-2019 #le nombre de vï¿½hicule par zone en france
+https://www.insee.fr/fr/recherche?q=v%C3%A9hicule+par+r%C3%A9gion&debut=0 # pour obtenir des statistiques sï¿½res
+https://www.tensorflow.org/tutorials/customization/custom_training_walkthrough # tutoriel pour faire une base de donnï¿½e customisï¿½e
 https://www.aihw.gov.au/reports/injury/pedal-cyclist-injury-deaths-hospitalisations/contents/summary
 https://en.wikipedia.org/wiki/Bicycle_helmets_in_New_Zealand
 https://en.wikipedia.org/wiki/Bicycle_helmets_in_the_United_States
+https://docs.microsoft.com/fr-fr/learn/modules/train-evaluate-deep-learn-models/1-introduction
 
-3,6,accidenté,portait un casque,tête,nuque,visage
+
+3,6,accidentï¿½,portait un casque,tï¿½te,nuque,visage
 
 classification :
-début d'étude	fin d'étude	véhicule	pays	loi	population	accidenté	portait un casque	tête	nuque	visage
+dï¿½but d'ï¿½tude	fin d'ï¿½tude	vï¿½hicule	pays	loi	population	accidentï¿½	portait un casque	tï¿½te	nuque	visage
 
-études utilisées : 
-#le rhône
+ï¿½tudes utilisï¿½es : 
+#le rhï¿½ne
 #thomson 1994
 #singapor 2005
 
@@ -21,10 +23,10 @@ début d'étude	fin d'étude	véhicule	pays	loi	population	accidenté	portait un casq
 1 -> us
 2 -> si
 
-note du 18/08/21 : je vais essayer de réduire les labels à déterminer à seulement le nombre d'accidenté cycliste, puisque c'est ce qui nous intéresse tout particulièrement. De ce fait,
-je pense qu'entraîner un réseau entier par valeur recherché est peut_être la bonne solution.
+note du 18/08/21 : je vais essayer de rï¿½duire les labels ï¿½ dï¿½terminer ï¿½ seulement le nombre d'accidentï¿½ cycliste, puisque c'est ce qui nous intï¿½resse tout particuliï¿½rement. De ce fait,
+je pense qu'entraï¿½ner un rï¿½seau entier par valeur recherchï¿½ est peut_ï¿½tre la bonne solution.
 
-en sauvegarde, voici les valeurs et les labels utilisées avant changement : 
+en sauvegarde, voici les valeurs et les labels utilisï¿½es avant changement : 
 features:
 1998.0,2021.0,50000.0,0.0,0.0,1600000.0
 1992.0,1994.0,465264.0,1.0,0.0,730400.0
