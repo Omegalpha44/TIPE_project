@@ -1,0 +1,17 @@
+
+#resultat pour la run sur l'importance des voitures 
+#malgré une perte grande et une erreur relative de 150, on observe que la courbe du nombre de blesse en fonction
+#du nombre de voiture est croissante -> le nombre de voiture influe sur le caractère blesse / non blesse.
+
+#résultat pour la run 28 
+#prédiction en fonction de l'évolution du nombre de casque : la courbe augmente, ce qui ne correspond pas
+#du tout à ce que nous voudrions observer.
+#paramètre de sortie : le nombre de blessé et le nombre de personne disposant d'un casque non blessé gravement
+
+résultat pour la run après modification :
+on observe que la courbe décroit en fonction du nombre de personnes portant un casque -> concorde avec ce qui était
+prévisible
+
+résultat pour une simulation : 
+On observe que rendre la loi obligatoire du port du casque réd uit légèrement le nombre de blessé,
+tandis que la rendre obligatoire uniquement pour les enfants ne change pas le nombre de blessé (cause :base de donnée ?)

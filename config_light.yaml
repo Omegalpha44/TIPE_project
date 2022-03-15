@@ -1,0 +1,29 @@
+input_features:
+        # name: size # population étudié
+        # type: numerical -> inutile car résultat tous en pourcentage
+    -
+        name: location # positionnement géographique de l'étude
+        type: category
+    -
+        name: mandatory # si le casque est obligatoire ou non
+        type: category
+    -
+        name: car_2 # pourcentage de voiture pour 100 personnes
+        type: numerical
+        tied_weights: location
+        clip: [0,200]
+    -
+        name: helmeted # pourcentage de port de casque
+        type: numerical
+        clip: [0,100]
+output_features:
+    -
+        name: injury # pourcentage de blessé
+        type: numerical
+        loss:
+          weight: 1
+        clip: [0,100]
+training:
+        batch_size: 128 # nombre d'élément traité par passage
+        epochs: 10000 # on pose beaucoup d'époque afin d'avoir le résultat le plus précis possible
+        optimiser : "adagrad" #descente de gradient

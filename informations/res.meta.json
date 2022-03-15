@@ -1,0 +1,505 @@
+{
+    "ages": {
+        "char_idx2str": [
+            "<PAD>",
+            "<UNK>",
+            "all",
+            "child",
+            "adult"
+        ],
+        "char_max_sequence_length": 5,
+        "char_pad_idx": 0,
+        "char_pad_symbol": "<PAD>",
+        "char_str2freq": {
+            "<PAD>": 0,
+            "<UNK>": 0,
+            "adult": 16,
+            "all": 52,
+            "child": 27
+        },
+        "char_str2idx": {
+            "<PAD>": 0,
+            "<UNK>": 1,
+            "adult": 4,
+            "all": 2,
+            "child": 3
+        },
+        "char_unk_symbol": "<UNK>",
+        "char_vocab_size": 5,
+        "preprocessing": {
+            "char_most_common": 70,
+            "char_sequence_length_limit": 1024,
+            "char_tokenizer": "characters",
+            "char_vocab_file": null,
+            "computed_fill_value": "<UNK>",
+            "fill_value": "<UNK>",
+            "lowercase": true,
+            "missing_value_strategy": "fill_with_const",
+            "padding": "right",
+            "padding_symbol": "<PAD>",
+            "pretrained_model_name_or_path": null,
+            "unknown_symbol": "<UNK>",
+            "word_most_common": 20000,
+            "word_sequence_length_limit": 256,
+            "word_tokenizer": "space_punct",
+            "word_vocab_file": null
+        },
+        "word_idx2str": [
+            "<PAD>",
+            "<UNK>",
+            "all",
+            "child",
+            "adult"
+        ],
+        "word_max_sequence_length": 1,
+        "word_pad_idx": 0,
+        "word_pad_symbol": "<PAD>",
+        "word_str2freq": {
+            "<PAD>": 0,
+            "<UNK>": 0,
+            "adult": 16,
+            "all": 52,
+            "child": 27
+        },
+        "word_str2idx": {
+            "<PAD>": 0,
+            "<UNK>": 1,
+            "adult": 4,
+            "all": 2,
+            "child": 3
+        },
+        "word_unk_symbol": "<UNK>",
+        "word_vocab_size": 5
+    },
+    "c.inj": {
+        "preprocessing": {
+            "computed_fill_value": 0,
+            "fill_value": 0,
+            "missing_value_strategy": "fill_with_const",
+            "normalization": null
+        }
+    },
+    "c.ninj": {
+        "preprocessing": {
+            "computed_fill_value": 0,
+            "fill_value": 0,
+            "missing_value_strategy": "fill_with_const",
+            "normalization": null
+        }
+    },
+    "checksum": "7VYUb1oMjXGVeOEy15TD_g==",
+    "data_train_hdf5_fp": "C:\\Users\\charl\\Source\\Repos\\Omegalpha44\\TIPE_project\\informations\\res.training.hdf5",
+    "dataset_src": "C:\\Users\\charl\\Source\\Repos\\Omegalpha44\\TIPE_project\\informations\\res.csv",
+    "injury.type": {
+        "char_idx2str": [
+            "<PAD>",
+            "<UNK>",
+            "serious.head",
+            "head",
+            "face",
+            "neck",
+            "fatal"
+        ],
+        "char_max_sequence_length": 12,
+        "char_pad_idx": 0,
+        "char_pad_symbol": "<PAD>",
+        "char_str2freq": {
+            "<PAD>": 0,
+            "<UNK>": 0,
+            "face": 17,
+            "fatal": 3,
+            "head": 31,
+            "neck": 13,
+            "serious.head": 31
+        },
+        "char_str2idx": {
+            "<PAD>": 0,
+            "<UNK>": 1,
+            "face": 4,
+            "fatal": 6,
+            "head": 3,
+            "neck": 5,
+            "serious.head": 2
+        },
+        "char_unk_symbol": "<UNK>",
+        "char_vocab_size": 7,
+        "preprocessing": {
+            "char_most_common": 70,
+            "char_sequence_length_limit": 1024,
+            "char_tokenizer": "characters",
+            "char_vocab_file": null,
+            "computed_fill_value": "<UNK>",
+            "fill_value": "<UNK>",
+            "lowercase": true,
+            "missing_value_strategy": "fill_with_const",
+            "padding": "right",
+            "padding_symbol": "<PAD>",
+            "pretrained_model_name_or_path": null,
+            "unknown_symbol": "<UNK>",
+            "word_most_common": 20000,
+            "word_sequence_length_limit": 256,
+            "word_tokenizer": "space_punct",
+            "word_vocab_file": null
+        },
+        "word_idx2str": [
+            "<PAD>",
+            "<UNK>",
+            "head",
+            ".",
+            "serious",
+            "face",
+            "neck",
+            "fatal"
+        ],
+        "word_max_sequence_length": 3,
+        "word_pad_idx": 0,
+        "word_pad_symbol": "<PAD>",
+        "word_str2freq": {
+            ".": 31,
+            "<PAD>": 0,
+            "<UNK>": 0,
+            "face": 17,
+            "fatal": 3,
+            "head": 62,
+            "neck": 13,
+            "serious": 31
+        },
+        "word_str2idx": {
+            ".": 3,
+            "<PAD>": 0,
+            "<UNK>": 1,
+            "face": 5,
+            "fatal": 7,
+            "head": 2,
+            "neck": 6,
+            "serious": 4
+        },
+        "word_unk_symbol": "<UNK>",
+        "word_vocab_size": 8
+    },
+    "location": {
+        "char_idx2str": [
+            "<PAD>",
+            "<UNK>",
+            "usa",
+            "australia",
+            "sweden",
+            "canada",
+            "hong kong",
+            "germany",
+            "france",
+            "singapore",
+            "norway",
+            "uk",
+            "finland",
+            "uae",
+            "usa/canada"
+        ],
+        "char_max_sequence_length": 10,
+        "char_pad_idx": 0,
+        "char_pad_symbol": "<PAD>",
+        "char_str2freq": {
+            "<PAD>": 0,
+            "<UNK>": 0,
+            "australia": 22,
+            "canada": 8,
+            "finland": 1,
+            "france": 4,
+            "germany": 4,
+            "hong kong": 5,
+            "norway": 2,
+            "singapore": 3,
+            "sweden": 8,
+            "uae": 1,
+            "uk": 1,
+            "usa": 35,
+            "usa/canada": 1
+        },
+        "char_str2idx": {
+            "<PAD>": 0,
+            "<UNK>": 1,
+            "australia": 3,
+            "canada": 5,
+            "finland": 12,
+            "france": 8,
+            "germany": 7,
+            "hong kong": 6,
+            "norway": 10,
+            "singapore": 9,
+            "sweden": 4,
+            "uae": 13,
+            "uk": 11,
+            "usa": 2,
+            "usa/canada": 14
+        },
+        "char_unk_symbol": "<UNK>",
+        "char_vocab_size": 15,
+        "preprocessing": {
+            "char_most_common": 70,
+            "char_sequence_length_limit": 1024,
+            "char_tokenizer": "characters",
+            "char_vocab_file": null,
+            "computed_fill_value": "<UNK>",
+            "fill_value": "<UNK>",
+            "lowercase": true,
+            "missing_value_strategy": "fill_with_const",
+            "padding": "right",
+            "padding_symbol": "<PAD>",
+            "pretrained_model_name_or_path": null,
+            "unknown_symbol": "<UNK>",
+            "word_most_common": 20000,
+            "word_sequence_length_limit": 256,
+            "word_tokenizer": "space_punct",
+            "word_vocab_file": null
+        },
+        "word_idx2str": [
+            "<PAD>",
+            "<UNK>",
+            "usa",
+            "australia",
+            "canada",
+            "sweden",
+            "hong",
+            "kong",
+            "germany",
+            "france",
+            "singapore",
+            "norway",
+            "uk",
+            "finland",
+            "uae",
+            "/"
+        ],
+        "word_max_sequence_length": 3,
+        "word_pad_idx": 0,
+        "word_pad_symbol": "<PAD>",
+        "word_str2freq": {
+            "/": 1,
+            "<PAD>": 0,
+            "<UNK>": 0,
+            "australia": 22,
+            "canada": 9,
+            "finland": 1,
+            "france": 4,
+            "germany": 4,
+            "hong": 5,
+            "kong": 5,
+            "norway": 2,
+            "singapore": 3,
+            "sweden": 8,
+            "uae": 1,
+            "uk": 1,
+            "usa": 36
+        },
+        "word_str2idx": {
+            "/": 15,
+            "<PAD>": 0,
+            "<UNK>": 1,
+            "australia": 3,
+            "canada": 4,
+            "finland": 13,
+            "france": 9,
+            "germany": 8,
+            "hong": 6,
+            "kong": 7,
+            "norway": 11,
+            "singapore": 10,
+            "sweden": 5,
+            "uae": 14,
+            "uk": 12,
+            "usa": 2
+        },
+        "word_unk_symbol": "<UNK>",
+        "word_vocab_size": 16
+    },
+    "male": {
+        "preprocessing": {
+            "computed_fill_value": 0,
+            "fill_value": 0,
+            "missing_value_strategy": "fill_with_const",
+            "normalization": null
+        }
+    },
+    "mandatory": {
+        "char_idx2str": [
+            "<PAD>",
+            "<UNK>",
+            "n",
+            "y",
+            "<unk>"
+        ],
+        "char_max_sequence_length": 5,
+        "char_pad_idx": 0,
+        "char_pad_symbol": "<PAD>",
+        "char_str2freq": {
+            "<PAD>": 0,
+            "<UNK>": 0,
+            "<unk>": 4,
+            "n": 47,
+            "y": 44
+        },
+        "char_str2idx": {
+            "<PAD>": 0,
+            "<UNK>": 1,
+            "<unk>": 4,
+            "n": 2,
+            "y": 3
+        },
+        "char_unk_symbol": "<UNK>",
+        "char_vocab_size": 5,
+        "preprocessing": {
+            "char_most_common": 70,
+            "char_sequence_length_limit": 1024,
+            "char_tokenizer": "characters",
+            "char_vocab_file": null,
+            "computed_fill_value": "<UNK>",
+            "fill_value": "<UNK>",
+            "lowercase": true,
+            "missing_value_strategy": "fill_with_const",
+            "padding": "right",
+            "padding_symbol": "<PAD>",
+            "pretrained_model_name_or_path": null,
+            "unknown_symbol": "<UNK>",
+            "word_most_common": 20000,
+            "word_sequence_length_limit": 256,
+            "word_tokenizer": "space_punct",
+            "word_vocab_file": null
+        },
+        "word_idx2str": [
+            "<PAD>",
+            "<UNK>",
+            "n",
+            "y",
+            "<",
+            "unk",
+            ">"
+        ],
+        "word_max_sequence_length": 3,
+        "word_pad_idx": 0,
+        "word_pad_symbol": "<PAD>",
+        "word_str2freq": {
+            "<": 4,
+            "<PAD>": 0,
+            "<UNK>": 0,
+            ">": 4,
+            "n": 47,
+            "unk": 4,
+            "y": 44
+        },
+        "word_str2idx": {
+            "<": 4,
+            "<PAD>": 0,
+            "<UNK>": 1,
+            ">": 6,
+            "n": 2,
+            "unk": 5,
+            "y": 3
+        },
+        "word_unk_symbol": "<UNK>",
+        "word_vocab_size": 7
+    },
+    "mandatory.category": {
+        "char_idx2str": [
+            "<PAD>",
+            "<UNK>",
+            "n",
+            "child",
+            "all"
+        ],
+        "char_max_sequence_length": 5,
+        "char_pad_idx": 0,
+        "char_pad_symbol": "<PAD>",
+        "char_str2freq": {
+            "<PAD>": 0,
+            "<UNK>": 0,
+            "all": 19,
+            "child": 26,
+            "n": 50
+        },
+        "char_str2idx": {
+            "<PAD>": 0,
+            "<UNK>": 1,
+            "all": 4,
+            "child": 3,
+            "n": 2
+        },
+        "char_unk_symbol": "<UNK>",
+        "char_vocab_size": 5,
+        "preprocessing": {
+            "char_most_common": 70,
+            "char_sequence_length_limit": 1024,
+            "char_tokenizer": "characters",
+            "char_vocab_file": null,
+            "computed_fill_value": "<UNK>",
+            "fill_value": "<UNK>",
+            "lowercase": true,
+            "missing_value_strategy": "fill_with_const",
+            "padding": "right",
+            "padding_symbol": "<PAD>",
+            "pretrained_model_name_or_path": null,
+            "unknown_symbol": "<UNK>",
+            "word_most_common": 20000,
+            "word_sequence_length_limit": 256,
+            "word_tokenizer": "space_punct",
+            "word_vocab_file": null
+        },
+        "word_idx2str": [
+            "<PAD>",
+            "<UNK>",
+            "n",
+            "child",
+            "all"
+        ],
+        "word_max_sequence_length": 1,
+        "word_pad_idx": 0,
+        "word_pad_symbol": "<PAD>",
+        "word_str2freq": {
+            "<PAD>": 0,
+            "<UNK>": 0,
+            "all": 19,
+            "child": 26,
+            "n": 50
+        },
+        "word_str2idx": {
+            "<PAD>": 0,
+            "<UNK>": 1,
+            "all": 4,
+            "child": 3,
+            "n": 2
+        },
+        "word_unk_symbol": "<UNK>",
+        "word_vocab_size": 5
+    },
+    "size": {
+        "preprocessing": {
+            "computed_fill_value": 0,
+            "fill_value": 0,
+            "missing_value_strategy": "fill_with_const",
+            "normalization": null
+        }
+    },
+    "t.inj": {
+        "preprocessing": {
+            "computed_fill_value": 0,
+            "fill_value": 0,
+            "missing_value_strategy": "fill_with_const",
+            "normalization": null
+        }
+    },
+    "t.ninj": {
+        "preprocessing": {
+            "computed_fill_value": 0,
+            "fill_value": 0,
+            "missing_value_strategy": "fill_with_const",
+            "normalization": null
+        }
+    },
+    "year": {
+        "preprocessing": {
+            "computed_fill_value": 0,
+            "fill_value": 0,
+            "missing_value_strategy": "fill_with_const",
+            "normalization": null
+        }
+    }
+}

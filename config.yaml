@@ -1,0 +1,50 @@
+input_features:
+    -
+        name: year
+        type: numerical
+    -
+        name: injury.type
+        type: category
+    -
+        name: size
+        type: numerical
+    -
+        name: location
+        type: category
+    -
+        name: mandatory
+        type: category
+    -
+        name: mandatory.category
+        type: category
+        tied_weights: mandatory
+    -
+        name: car
+        type: numerical
+        tied_weights: location
+    -
+        name: helmeted
+        type: numerical
+        tied_weights: size
+        clip: [0,100]
+
+output_features:
+    -
+        name: injury
+        type: numerical
+        loss:
+          weight: 1
+        clip: [0,16000]
+    -
+        name: t.inj
+        type: numerical
+        loss:
+            weight: 1
+        depedencies: 
+        - injury
+        clip: [0,16000]
+
+training:
+        batch_size: 128
+        epochs: 10000
+        optimiser : "sgd"

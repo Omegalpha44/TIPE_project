@@ -1,0 +1,4 @@
+year,injury.type,size,mandatory,mandatory.category,location,car,helmeted
+2016,head,1000,N,N,fr,482,50
+2016,head,1000,Y,all,fr,482,50
+2016,head,1000,Y,child,fr,482,50

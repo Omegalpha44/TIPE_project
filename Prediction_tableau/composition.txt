@@ -1,0 +1,34 @@
+Ensemble de toutes les compositions possibles entre les différentes valeurs du tableau :
+year : de 1989 à 2016
+injury.type : 
+- head
+- serious.head
+- face
+- fatal
+- head
+- neck
+size : de 35 à 15569
+location :
+- Australia
+- Canada
+- Finland
+- France
+- Germany
+- Hong Kong
+- Norway
+- Singapore
+- Sweden
+- UAE
+- UK
+- USA
+- USA/Canada
+mandatory :
+- N
+- Y
+- 
+mandatory.category:
+- all
+- child
+- N
+car: de 27,2 à 10664,765
+helmeted: de 0,05 à 76,99

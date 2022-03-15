@@ -1,0 +1,112 @@
+{
+    "car": {
+        "preprocessing": {
+            "computed_fill_value": 0,
+            "fill_value": 0,
+            "missing_value_strategy": "fill_with_const",
+            "normalization": null
+        }
+    },
+    "checksum": "qe141fepFfET30XXnh0D7A==",
+    "data_train_hdf5_fp": "C:\\Users\\charl\\Source\\Repos\\Omegalpha44\\TIPE_project\\informations\\res5(pourcentage)(ex)(csv).training.hdf5",
+    "dataset_src": "C:\\Users\\charl\\Source\\Repos\\Omegalpha44\\TIPE_project\\informations\\res5(pourcentage)(ex)(csv).csv",
+    "helmeted": {
+        "preprocessing": {
+            "computed_fill_value": 0,
+            "fill_value": 0,
+            "missing_value_strategy": "fill_with_const",
+            "normalization": null
+        }
+    },
+    "injury": {
+        "preprocessing": {
+            "computed_fill_value": 0,
+            "fill_value": 0,
+            "missing_value_strategy": "fill_with_const",
+            "normalization": null
+        }
+    },
+    "location": {
+        "idx2str": [
+            "<UNK>",
+            "USA",
+            "Australia",
+            "Canada",
+            "Sweden",
+            "Hong Kong",
+            "France",
+            "Germany",
+            "Singapore",
+            "Norway",
+            "USA/Canada",
+            "UAE",
+            "UK",
+            "Finland"
+        ],
+        "preprocessing": {
+            "computed_fill_value": "<UNK>",
+            "fill_value": "<UNK>",
+            "lowercase": false,
+            "missing_value_strategy": "fill_with_const",
+            "most_common": 10000
+        },
+        "str2freq": {
+            "<UNK>": 0,
+            "Australia": 22,
+            "Canada": 8,
+            "Finland": 1,
+            "France": 4,
+            "Germany": 4,
+            "Hong Kong": 5,
+            "Norway": 2,
+            "Singapore": 3,
+            "Sweden": 8,
+            "UAE": 1,
+            "UK": 1,
+            "USA": 35,
+            "USA/Canada": 1
+        },
+        "str2idx": {
+            "<UNK>": 0,
+            "Australia": 2,
+            "Canada": 3,
+            "Finland": 13,
+            "France": 6,
+            "Germany": 7,
+            "Hong Kong": 5,
+            "Norway": 9,
+            "Singapore": 8,
+            "Sweden": 4,
+            "UAE": 11,
+            "UK": 12,
+            "USA": 1,
+            "USA/Canada": 10
+        },
+        "vocab_size": 14
+    },
+    "mandatory": {
+        "idx2str": [
+            "<UNK>",
+            "N",
+            "Y"
+        ],
+        "preprocessing": {
+            "computed_fill_value": "<UNK>",
+            "fill_value": "<UNK>",
+            "lowercase": false,
+            "missing_value_strategy": "fill_with_const",
+            "most_common": 10000
+        },
+        "str2freq": {
+            "<UNK>": 4,
+            "N": 47,
+            "Y": 44
+        },
+        "str2idx": {
+            "<UNK>": 0,
+            "N": 1,
+            "Y": 2
+        },
+        "vocab_size": 3
+    }
+}

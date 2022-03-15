@@ -8,6 +8,8 @@ https://en.wikipedia.org/wiki/Bicycle_helmets_in_New_Zealand
 https://en.wikipedia.org/wiki/Bicycle_helmets_in_the_United_States
 https://docs.microsoft.com/fr-fr/learn/modules/train-evaluate-deep-learn-models/1-introduction
 
+t.inj = cycliste blessé
+t.ninj = cycliste non blessé
 
 3,6,accident�,portait un casque,t�te,nuque,visage
 
