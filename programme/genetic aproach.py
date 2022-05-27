@@ -19,7 +19,7 @@ def gen1():
     #1.on définit le ground truth
 
     function_input = 8373
-    desired_output = [1471,529] 
+    desired_output = [0,0]
 
     #2. on définit la fonction fitness
 
@@ -45,7 +45,7 @@ def gen1():
 
     # paramètre de l'algorithme génétique
 
-    num_generations = 50
+    num_generations = 10
 
     num_parents_mating = 4
 

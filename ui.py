@@ -14,41 +14,41 @@ Programme d'interface pour les mesures et les vérifications des informations re
 """
 
 
-class App(object):
+class App(object): # Classe de l'interface
     def __init__(self):
-        self.root = tk.Tk()
-        self.root.title("pour visualiser le modèle")
-        self.counter = 0
-        self.can = tk.Canvas(self.root,width=500,height=400)
-        self.entry = ttk.Entry(self.root)
-        self.can.create_text(250,100,text="Plotting tool", justify='center',font='Cascada 26 bold')
-        self.can.create_window(250,200,window=self.entry,width=400)
-        self.button = ttk.Button(self.root,command=self.update,text='plot')
-        self.can.create_window(250, 300, window=self.button)
-        self.can.create_text(250,350,text="vert = lois, jaune = pays, rouge = casques, bleu = voitures",justify='center')
-        self.can.pack()
-        self.root.mainloop()
+        self.root = tk.Tk() # Création de la fenêtre principale
+        self.root.title("pour visualiser le modèle") # Titre de la fenêtre
+        self.counter = 0 # Compteur pour les figures
+        self.can = tk.Canvas(self.root,width=500,height=400) # Création d'un canvas
+        self.entry = ttk.Entry(self.root) # Création d'une zone de texte
+        self.can.create_text(250,100,text="Plotting tool", justify='center',font='Cascada 26 bold') # Création d'un texte
+        self.can.create_window(250,200,window=self.entry,width=400) # Création d'une zone de texte
+        self.button = ttk.Button(self.root,command=self.update,text='plot') # Création d'un bouton
+        self.can.create_window(250, 300, window=self.button) # Création d'un bouton dans le canvas
+        self.can.create_text(250,350,text="vert = lois, jaune = pays, rouge = casques, bleu = voitures",justify='center') # Création d'un texte
+        self.can.pack() # Affichage du canvas
+        self.root.mainloop() # Boucle infinie
 
-    def update(self):
+    def update(self): # Fonction qui permet de mettre à jour le canvas
         a = "_helmeted"
-        rep = self.entry.get()
-        top = tk.Toplevel(self.root)
-        top.title(rep)
-        b = fg.Figure((5, 5), dpi=100)
+        rep = self.entry.get() # Récupération de la valeur de la zone de texte
+        top = tk.Toplevel(self.root) # Création d'une fenêtre secondaire
+        top.title(rep) # Titre de la fenêtre secondaire
+        b = fg.Figure((5, 5), dpi=100) # Création d'une figure
         d2 = {'USA': 0, 'Australia': 1, 'UK': 2, 'USA/Canada': 3, 'Canada': 4, 'Norway': 5, 'Singapore': 6, 'UAE': 7,
-              'Hong Kong': 8, 'Finland': 9, 'France': 10, 'Germany': 11, 'Sweden': 12}
-        d2_reverse = {k: i for i, k in d2.items()}
-        countries = [d2_reverse[i] for i in range(13)]
+              'Hong Kong': 8, 'Finland': 9, 'France': 10, 'Germany': 11, 'Sweden': 12} # Dictionnaire pour les pays
+        d2_reverse = {k: i for i, k in d2.items()} # Dictionnaire inverse pour les pays
+        countries = [d2_reverse[i] for i in range(13)] # Liste des pays
 
-        def rg(a, b):
+        def rg(a, b): # Fonction qui permet de créer une liste de valeurs numériques
             return [str(i) for i in range(a, b + 1)]
 
-        def rgp(a, b, p):
+        def rgp(a, b, p): # Fonction qui permet de créer une liste de valeurs numériques
             return [str(i) for i in range(a, b + 1, p)]
 
-        plot1 = b.add_subplot(111)
+        plot1 = b.add_subplot(111) # Création d'un sous-plot
         Y = self.tester(a, ["France"], ['N', 'Y'], ['50'], ['50'],rep)
-        plot1.plot(Y,'g')
+        plot1.plot(Y,'g') # Trace du graphique
         plot1.plot(self.tester(a, countries, ["N"], ["50"], ["50"],rep),"y")
         plot1.plot(self.tester(a, ['France'], ["N"], rg(0, 100), ["50"],rep),'r')
         plot1.plot(self.tester(a, ['France'], ["N"], ["50"], rg(0, 100),rep),'b')
@@ -57,9 +57,9 @@ class App(object):
         canvas.draw()
         canvas.get_tk_widget().pack()
 
-    def tester(self,ind, location, mandatory, helmeted, car, rep):
+    def tester(self,ind, location, mandatory, helmeted, car, rep): # Fonction qui permet de tester les données
         model = tf.keras.models.load_model(rep)
-        def pred_2(ind, size, location, mandatory, car, helmeted):
+        def pred_2(ind, size, location, mandatory, car, helmeted): # Fonction qui permet de prédire les casques
             a = open("prediction_tableau/prediction" + ind + ".csv", "w")
             a.write("size,location,mandatory,helmeted,car_2," + "\n")
             v = ","
@@ -172,7 +172,7 @@ class Training(object):
 
         def get_basic_model():
             model = tf.keras.Sequential([
-                tf.keras.layers.Dense(94, activation='tanh'),
+                tf.keras.layers.Dense(94, activation='relu'),
                 tf.keras.layers.Dense(32, activation="relu"),
                 tf.keras.layers.Dense(16, activation='relu'),
                 tf.keras.layers.Dense(1)

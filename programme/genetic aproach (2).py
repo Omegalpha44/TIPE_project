@@ -18,8 +18,8 @@ def gen1():
 
     #1.on définit le ground truth
 
-    function_input = 8373
-    desired_output = [1471,529] 
+    function_input = 8373 # nombre de cyclistes blessés dans le rhône entre 1998 et 2008
+    desired_output = [0] #on vise 0 blessé
 
     #2. on définit la fonction fitness
 
@@ -32,12 +32,11 @@ def gen1():
         ps.sport = solution[5]
         ps.helmet_risk_reducing = solution[6]
         res = pr.mass_simulation_moyennée(function_input)
-        output = [res[0],res[4]]
+        output = [sum(res)/4]
         ic(output)
         couple.append(output)
         fitness1 = 1/numpy.abs(output[0] - desired_output[0])
-        fitness2 = 1/numpy.abs(output[1] - desired_output[1])
-        fitness = (abs(fitness1) + abs(fitness2))/2
+        fitness = abs(fitness1)
         ic(fitness)
         asso.append([fitness,solution])
         return fitness
@@ -45,23 +44,23 @@ def gen1():
 
     # paramètre de l'algorithme génétique
 
-    num_generations = 5
+    num_generations = 50 # nombre de générations
 
-    num_parents_mating = 4
+    num_parents_mating = 4 # nombre de parents qui se mènent à la reproduction
 
-    sol_per_pop = 20
-    num_genes = 7
+    sol_per_pop = 20 # nombre de solutions par population
+    num_genes = 7 # nombre de paramètres
 
-    init_range_low = 0
+    init_range_low = 0 # valeur minimale de chaque paramètre
     init_range_high = 1 # age en pourcentage, on considère que au dela de 100 ans la personne ne fait plus de vélo
 
-    parent_selection_type = "sss"
-    keep_parents = 4
-    gene_space = numpy.arange(0,1,0.00001)
-    crossover_type = "single_point"
+    parent_selection_type = "sss" # type de sélection des parents
+    keep_parents = 4 # nombre de parents conservés
+    gene_space = numpy.arange(0,1,0.00001) # espace des paramètres
+    crossover_type = "single_point" # type de croisement
 
-    mutation_type = "random"
-    mutation_percent_genes = 20
+    mutation_type = "random" # type de mutation
+    mutation_percent_genes = 20 # pourcentage de mutation des paramètres
 
     #création de l'instance
 
@@ -80,7 +79,7 @@ def gen1():
                             gene_space=gene_space)
 
 
-    ga_instance.run()
+    ga_instance.run() # lancement de l'algorithme
 
     #affichage des résultats
 
@@ -101,7 +100,7 @@ def gen1():
     #recherche de la fit la plus élevé sur l'intégralité du parcours et non pas uniquement sur la dernière époque
 
 
-    def mx(): 
+    def mx():  # la fonction qui va chercher la fitness la plus élevée
         '''Récupération des 5 valeurs ayant obtenues la plus haute fitness dans l'ensemble des générations'''
         max = [0,[]]
         c = 0
@@ -123,9 +122,8 @@ def gen1():
     plt.plot(X,Y)
     plt.show()
     #résultat : 
-    # [0.23082 0.2418  0.05785 0.30925 0.238   0.30175 0.89066] fit = inf
-    # [0.35392 0.00703 0.05203 0.15667 0.21758 0.88732 0.49523] fit = 0.50
-    # [0.38125 0.549   0.05497 0.75923 0.69725 0.06841 0.58737] fit = 0.055
-    # [0.13751 0.31678 0.05947 0.38065 0.07699 0.15622 0.28947] fit = 0.500
-    # [0.19888 0.963   0.0419  0.52166 0.39168 0.98445 0.4281 ] fit = 0.509
+# [2250.925] soit 2250,925/8373*100 = 22,5% de la population blessée
+# ic| max: [0.00044426180348079117,
+#           array([0.0145 , 0.06186, 0.00328, 0.83399, 0.00558, 0.69183, 0.79491])]
+# 70% de port de casque, qui réduit de 80% le risque de blessure
 gen1()
