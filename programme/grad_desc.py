@@ -1,58 +1,49 @@
-#algorithme de régression linéaire
-import random as rand
+
 import matplotlib.pyplot as plt
+import numpy as np
+import random as rand
+X_dispersion = np.linspace(0, 1, 100)
+
+Y_dispersion = [rand.randint(i-20,i+20) for i in range(len(X_dispersion))]
+a=0
+b=0
+c=0
+alpha = 0.01
 
 
-
-
-
-
-
-def fitness(x,y):
-    return abs(x-y)
-
-a = 1
-b = 1
-n = 0.01
 def f(x):
     global a
     global b
-    return a*x+b
+    global c 
+    return a*x**2+b*x+c
 
 
-X_dispersion = [i for i in range(0,100,2)]
-Y_dispersion = [i*2+4 for i in range(0,100,2)]
-
-
-
-def cost(X,Y):
-    somme = 0
-    for i in range(len(X)):
-        x = X[i]
-        y = Y[i]
-        somme = somme + (f(x)-y)**2
-    return somme
-
-
-def descente_de_gradient(f,X,Y,n):
+def gradient():
     global a
     global b
-    a_new = a - n*2*sum([(f(x)-y)*x for x,y in zip(X,Y)])/len(X)
-    b_new = b - n*2*sum([(f(x)-y) for x,y in zip(X,Y)])/len(X)
-    return a_new,b_new
+    global c 
+    m = len(X_dispersion)
+    res1 = 0
+    res2 = 0
+    res3=0
+    for i in range(m):
+        res1+= (f(X_dispersion[i])-Y_dispersion[i])*X_dispersion[i]**2
+        res2+= (f(X_dispersion[i])-Y_dispersion[i])*X_dispersion[i]
+        res3+= (f(X_dispersion[i])-Y_dispersion[i])
+    return res1/m, res2/m, res3/m
 
-def main():
-    global a
-    global b
-    for i in range(100):
-        a,b = descente_de_gradient(f,X_dispersion,Y_dispersion,n)
-        print(a,b)
-        print(cost(X_dispersion,Y_dispersion))
-        print("\n")
+def descente_gradient(n):
+    global a 
+    global b 
+    global c 
+    for i in range(n):
+        x,y,z = gradient()
+        a = a - alpha*x
+        b = b - alpha*y
+        c = c - alpha*z
+    return
+descente_gradient(10000)
 
-
-main()
-print(a,b)
-plt.plot(X_dispersion,[f(x) for x in X_dispersion])
-plt.plot(X_dispersion,Y_dispersion,'o')
+plt.plot(X_dispersion, f(X_dispersion), label="f(x)")
+plt.plot(X_dispersion, Y_dispersion, 'o', label="y")
 plt.show()
