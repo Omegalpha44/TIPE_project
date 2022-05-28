@@ -48,7 +48,7 @@ print(df)
 def get_basic_model():
     model = tf.keras.Sequential([
 #        normalizer, #Cause des problèmes liés au fait que mes données ne sont pas assez diversifié en permier lieu.
-        tf.keras.layers.Dense(94,activation='tanh'),
+        tf.keras.layers.Dense(96,activation='tanh'),
         tf.keras.layers.Dense(32,activation="relu"),
         tf.keras.layers.Dense(16,activation='relu'),
         tf.keras.layers.Dense(1)
@@ -64,5 +64,5 @@ model_dir = "logs/models/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
 
 model = get_basic_model()
-model.fit(column_features, target, epochs=2000, batch_size=25, callbacks=[tensorboard_callback])
+model.fit(column_features, target, epochs=500, batch_size=96, callbacks=[tensorboard_callback])
 model.save(model_dir)
