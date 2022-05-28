@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import random as rand
 X_dispersion = np.linspace(0, 1, 100)
-
 Y_dispersion = [rand.randint(i-20,i+20) for i in range(len(X_dispersion))]
 a=0
 b=0
